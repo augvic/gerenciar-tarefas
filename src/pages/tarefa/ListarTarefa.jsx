@@ -33,12 +33,9 @@ function createData(
 
 //Definição do array contendo os dados iniciais da listagem de tarefas
 const initialRows = [
-  createData(1, 'Tarefa 1', 'Descrição da Tarefa 1', '2022-01-01', '2022-01-02', 'Concluída', 'Recurso 1'),
-  createData(2, 'Tarefa 2', 'Descrição da Tarefa 2', '2022-01-03', '2022-01-04', 'Em Andamento', 'Recurso 2'),
-  createData(3, 'Tarefa 3', 'Descrição da Tarefa 3', '2022-01-04', '2022-01-05', 'Em Andamento', 'Recurso 3'),
-  createData(4, 'Tarefa 4', 'Descrição da Tarefa 4', '2022-01-05', '2022-01-06', 'Em Andamento', 'Recurso 4'),
-  createData(5, 'Tarefa 5', 'Descrição da Tarefa 5', '2022-01-06', '2022-01-07', 'Em Andamento', 'Recurso 5'),
-  createData(6, 'Tarefa 6', 'Descrição da Tarefa 6', '2022-01-07', '2022-01-08', 'Aguardando', 'Recurso 6'),
+  createData(1, 'Tarefa 1', 'Descrição da Tarefa 1', '2022-01-01', '2024-09-11', 'Concluída', 'Recurso 1'),
+  createData(2, 'Tarefa 2', 'Descrição da Tarefa 2', '2022-01-03', '2024-09-11', 'Em Andamento', 'Recurso 2'),
+  createData(3, 'Tarefa 3', 'Descrição da Tarefa 3', '2022-01-04', '2024-09-11', 'Em Andamento', 'Recurso 3'),
 ];
 
 //Componente ListarTarefa
@@ -90,7 +87,7 @@ const ListarTarefa = () => {
         /> 
         <CardContent>
             <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+            <Table sx={{ minWidth: 650, backgroundColor: "#2b2b2b", "& .MuiTableCell-root": {color: "white"}}} size="small" aria-label="a dense table">
                 <TableHead>
                 <TableRow>
                     <TableCell>#</TableCell>
@@ -122,10 +119,10 @@ const ListarTarefa = () => {
                       <TableCell align="right">{row.statusTarefa}</TableCell>
                       <TableCell align="right">{row.recursoTarefa}</TableCell>
                       <TableCell align="center">
-                        <Button variant="contained" color="success" onClick={() => handleEditar(row.idTarefa)}><EditIcon fontSize="small" /></Button>            
+                        <Button variant="contained" sx={{backgroundColor: "#219e66", "&:hover": {backgroundColor: "#145437"}}} onClick={() => handleEditar(row.idTarefa)}><EditIcon fontSize="small" /></Button>            
                       </TableCell>
                       <TableCell align="center">
-                        <Button variant="contained" color="error" onClick={() => handleDeletar(row.idTarefa)}><DeleteIcon fontSize="small" /></Button>            
+                        <Button variant="contained" sx={{backgroundColor: "#b81440", "&:hover": {backgroundColor: "#750e2a"}}} onClick={() => handleDeletar(row.idTarefa)}><DeleteIcon fontSize="small" /></Button>            
                       </TableCell>
                     </TableRow>
                 ))}
@@ -134,8 +131,8 @@ const ListarTarefa = () => {
             </TableContainer>
         </CardContent>
         <CardActions>
-            <Button size="small" variant="contained" onClick={handleOpen}>Criar Tarefa</Button>
-            <Button size="small" variant="outlined">Cancelar</Button>
+            <Button size="small" variant="contained" onClick={handleOpen} sx={{backgroundColor: "#219e66", "&:hover": {backgroundColor: "#145437"}}}>Criar Tarefa</Button>
+            <Button size="small" variant="contained" sx={{backgroundColor: "#b81440", "&:hover": {backgroundColor: "#750e2a"}}}>Cancelar</Button>
       </CardActions> 
     </Card>
     <div>

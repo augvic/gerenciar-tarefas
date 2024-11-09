@@ -10,21 +10,21 @@ import IconButton from '@mui/material/IconButton';
 function Header() {
     return (
         <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="static" sx={{backgroundColor: "#219e66"}}>
           <Toolbar>
             <IconButton
               size="large"
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 2 }}
+              sx={{ mr: 2, backgroundColor: "white", "&:hover": {backgroundColor: "#969696"} }}
             >
               {/*  
               <MenuIcon />
               */}
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Gerenciamento de Projetos
+              Gerenciar Tarefas
             </Typography>
           </Toolbar>
         </AppBar>
